@@ -1,3 +1,5 @@
+
+
 from selenium.webdriver.common.keys import Keys
 
 class GooglePage:
@@ -16,4 +18,4 @@ class GooglePage:
         element.send_keys(Keys.RETURN)
 
     def check_result(self, name):
-        assert name in self.driver.page_source
+        return self.driver.page_source

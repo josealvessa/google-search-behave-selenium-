@@ -1,5 +1,8 @@
-from pages.GooglePage import GooglePage
 
+
+
+from pages.GooglePage import GooglePage
+#happy example =)
 @given(u'I am on Google Site')
 def step_impl(context):
     context.page_object = GooglePage(context.driver)
@@ -11,4 +14,5 @@ def step_impl(context, query):
 
 @then(u'I must see {name} on results')
 def step_impl(context, name):
-    context.page_object.check_result(name)
+    response = context.page_object.check_result(name)
+    assert name in response
